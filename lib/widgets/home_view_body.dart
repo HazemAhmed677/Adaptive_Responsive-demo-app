@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:for_experiment/widgets/custom_grid_view.dart';
+import 'package:for_experiment/widgets/custom_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -17,6 +18,12 @@ class HomeViewBody extends StatelessWidget {
               ),
             ),
             CustomGridView(),
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: 14,
+              ),
+            ),
+            CustomListView(),
           ],
         ),
       ),
