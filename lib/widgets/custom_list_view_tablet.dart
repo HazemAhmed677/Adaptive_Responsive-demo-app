@@ -7,14 +7,16 @@ class CustomListViewTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 100,
+        height: 120,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 10,
           itemBuilder: (context, index) => const AspectRatio(
             aspectRatio: 1,
             child: Padding(
-              padding: EdgeInsets.only(right: 8.0),
+              padding: EdgeInsets.only(
+                right: 10.0,
+              ),
               child: CustomItem(),
             ),
           ),

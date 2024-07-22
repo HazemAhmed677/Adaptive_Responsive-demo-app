@@ -33,32 +33,29 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width * 0.8,
-      child: Drawer(
-        backgroundColor: const Color(0xffDBDBDB),
-        child: Column(
-          children: [
-            const DrawerHeader(
-              child: Icon(
-                FontAwesomeIcons.solidHeart,
-                size: 36,
-              ),
+    return Drawer(
+      backgroundColor: const Color(0xffDBDBDB),
+      child: Column(
+        children: [
+          const DrawerHeader(
+            child: Icon(
+              FontAwesomeIcons.solidHeart,
+              size: 36,
             ),
-            const SizedBox(
-              height: 10,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 18.0,
+              right: 8,
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 18.0,
-                right: 8,
-              ),
-              child: CustomDrawerItemsIstView(
-                listOfItems: listOfItems,
-              ),
-            )
-          ],
-        ),
+            child: CustomDrawerItemsIstView(
+              listOfItems: listOfItems,
+            ),
+          )
+        ],
       ),
     );
   }

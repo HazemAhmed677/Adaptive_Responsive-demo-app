@@ -11,7 +11,7 @@ class CustomDrawerItemsIstView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 4,
       itemBuilder: (context, index) => Padding(
-        padding: const EdgeInsets.only(bottom: 28.0),
+        padding: const EdgeInsets.only(bottom: 8.0),
         child: listOfItems[index],
       ),
     );
