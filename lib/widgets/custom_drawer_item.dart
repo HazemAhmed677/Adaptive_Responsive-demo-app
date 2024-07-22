@@ -12,10 +12,14 @@ class CustomDrawerItem extends StatelessWidget {
         size: 18,
         color: const Color(0xff939194),
       ),
-      title: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 12,
+      title: FittedBox(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontSize: 12,
+          ),
         ),
       ),
     );
