@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:for_experiment/widgets/custom_grid_view.dart';
-import 'package:for_experiment/widgets/custom_list_view.dart';
+import 'package:for_experiment/widgets/mobile_layout.dart';
+import 'package:for_experiment/widgets/tablet_layout.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 22,
-              ),
-            ),
-            CustomGridView(),
-            SliverToBoxAdapter(
-              child: SizedBox(
-                height: 14,
-              ),
-            ),
-            CustomListView(),
-          ],
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: LayoutBuilder(
+          builder: (BuildContext context, BoxConstraints constraints) {
+            if (constraints.maxWidth < 600) {
+              return const MobileLayout();
+            } else {
+              return const TabletLayout();
+            }
+          },
         ),
       ),
     );
